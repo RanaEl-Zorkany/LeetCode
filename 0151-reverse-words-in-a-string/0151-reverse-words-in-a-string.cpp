@@ -18,9 +18,8 @@ public:
         }
         reverse(word.begin(), word.end());
         sentence += word;
-        string sen = sentence;
         if(sentence[sentence.size()-1] == ' ')
-            sen.assign(sentence.begin(),sentence.end()-1);
-        return sen;
+            sentence.assign(sentence.begin(),sentence.end()-1);
+        return sentence;
     }
 };
