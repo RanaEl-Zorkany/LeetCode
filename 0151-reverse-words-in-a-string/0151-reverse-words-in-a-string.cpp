@@ -17,7 +17,7 @@ public:
             }
         }
         reverse(word.begin(), word.end());
-        sentence += word; //the last word
+        sentence += word; 
         if(sentence[sentence.size()-1] == ' ')
             sentence.assign(sentence.begin(),sentence.end()-1);
         return sentence;
