@@ -5,6 +5,7 @@ public:
         for(char ch:s){
             numericString += to_string(ch - 'a' + 1);
         }
+    
         while (k--)
         {
             int sum = 0;
