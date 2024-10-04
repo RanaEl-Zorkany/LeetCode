@@ -28,10 +28,8 @@ public:
             }
             paths.push_back(path);
         }
-        if(root->left)
-            binaryTreePaths(root->left);
-        if(root->right)
-            binaryTreePaths(root->right);
+        binaryTreePaths(root->left);
+        binaryTreePaths(root->right);
         numerical.pop_back();
         return paths;
     }
