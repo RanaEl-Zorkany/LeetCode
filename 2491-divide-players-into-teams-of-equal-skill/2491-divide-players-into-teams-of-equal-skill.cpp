@@ -2,12 +2,12 @@
 #define ll long long
 class Solution {
 public:
+    ll production, sum; 
     long long dividePlayers(vector<int>& skill) {
         sort(all(skill));
         int size = skill.size() - 1;
         int i = 0, j = size;
-        ll production = 0, sum = skill[i] + skill[j];
-        
+        sum = skill[i] + skill[j];
         for(; i < j; i++, j--){
             if(sum != skill[i] + skill[j])
                 return -1;
