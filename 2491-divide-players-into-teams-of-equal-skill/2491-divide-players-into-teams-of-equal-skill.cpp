@@ -1,5 +1,5 @@
-#define all(x) (x).begin(), (x).end()
 #define ll long long
+#define all(x) (x).begin(), (x).end()
 class Solution {
 public:
     ll production, sum; 
