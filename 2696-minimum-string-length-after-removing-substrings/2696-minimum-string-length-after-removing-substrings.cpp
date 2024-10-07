@@ -7,7 +7,9 @@ public:
         {
             if(stc.empty()){
                 stc.push(s[i]);
-            } else if(s[i] == 'B' && stc.top() == 'A'){
+                continue;
+            } 
+            if(s[i] == 'B' && stc.top() == 'A'){
                 stc.pop();
             } else if(s[i] == 'D' && stc.top() == 'C'){
                 stc.pop();
