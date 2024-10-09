@@ -1,7 +1,8 @@
 class Solution {
     public int minAddToMakeValid(String s) {
         Stack<Character> parenthesis = new Stack<>();
-        for (int i = 0; i < s.length(); i++)
+        int size = s.length() - 1;
+        for (int i = 0; i <= size; i++)
         {
             char ch = s.charAt(i);
             if(parenthesis.empty())
