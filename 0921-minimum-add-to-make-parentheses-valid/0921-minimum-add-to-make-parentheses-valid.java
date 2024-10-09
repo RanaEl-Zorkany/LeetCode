@@ -5,9 +5,7 @@ class Solution {
         {
             char ch = s.charAt(i);
             if(parenthesis.empty())
-            {
                 parenthesis.push(ch);
-            }
             else if(ch == ')' && parenthesis.peek() == '('){
                 parenthesis.pop();
             } 
