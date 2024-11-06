@@ -6,6 +6,7 @@ class Solution {
             for (int j = i + 1; j < SIZE; j++)
             {
                 if (nums[i] > nums[j]){
+                    // bitCount returns number of 1's in binary representation
                     if(Integer.bitCount(nums[i]) == Integer.bitCount(nums[j])){
                         int temp = nums[i];
                         nums[i] = nums[j];
