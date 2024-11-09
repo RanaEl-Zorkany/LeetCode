@@ -5,7 +5,7 @@ class Solution {
 
         else{
             int it = 100;
-            while (it > 0){
+            while (it >= 0){
                 String string_num = Integer.toString(n);
                 int squared = 0;
                 int len = string_num.length();
