@@ -12,9 +12,7 @@ class Solution {
                 } else continue;
             }
             else{
-                j = i;
-                cnt = 0;
-                i--;
+                j = i; cnt = 0; i--;
             }
         }
         Arrays.sort(nums);
