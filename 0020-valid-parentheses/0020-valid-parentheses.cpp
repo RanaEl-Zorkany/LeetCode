@@ -9,11 +9,11 @@ public:
                 stc.push(ch);
             else{
                 if (stc.empty()) return false;
-                else if ((stc.top() == '(' && ch == ')') ||
-                    (stc.top() == '[' && ch == ']') || 
-                    (stc.top() == '{' && ch == '}'))
-                        stc.pop();
-                else return false;
+                if ((stc.top() == '(' && ch != ')') ||
+                    (stc.top() == '[' && ch != ']') || 
+                    (stc.top() == '{' && ch != '}'))
+                        return false;
+                stc.pop();
             }
         }
         return stc.empty();
