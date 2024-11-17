@@ -14,7 +14,7 @@ public:
         int remainder = 0;
         ListNode*result = new ListNode();
         ListNode*current = result; 
-        while(l1 != nullptr || l2 != nullptr){
+        while(l1 != nullptr || l2 != nullptr || remainder != 0){
             int sum = remainder;
             if(l1 != nullptr){
                 sum += l1 -> val;
@@ -28,10 +28,6 @@ public:
             current -> next = new ListNode(sum % 10);
             current = current -> next;
             
-        }
-        if(remainder != 0){
-            current -> next = new ListNode(remainder);
-            current = current -> next;
         }
         return result -> next;
     }
