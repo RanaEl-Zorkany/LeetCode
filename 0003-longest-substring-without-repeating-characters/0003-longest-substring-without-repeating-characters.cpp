@@ -4,7 +4,7 @@ public:
         int len = s.size();
         if (len <= 1) return len;
 
-        set<char> st;
+        unordered_set<char> st;
         int maxx = 0, i = 0;  
 
         for (int j = 0; j < len; j++) {  
