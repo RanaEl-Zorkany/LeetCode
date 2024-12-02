@@ -1,6 +1,7 @@
 class Solution {
 public:
     int isPrefixOfWord(string sentence, string searchWord) {
+        if(sentence.length() < searchWord.length()) return -1;
         string word = " " + searchWord;
         int pos = sentence.find(word), cnt = 1;
         for (int i = 0; i<=pos; i++){
