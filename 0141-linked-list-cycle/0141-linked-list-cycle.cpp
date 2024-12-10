@@ -13,9 +13,9 @@ public:
         long cnt = 0;
         while(tail != nullptr){
             cnt++;
-            if(cnt == 10001)
+            tail = tail -> next;
+            if(cnt > 10000)
                 return true;
-            else tail = tail -> next;
         }
         return false;
     }
