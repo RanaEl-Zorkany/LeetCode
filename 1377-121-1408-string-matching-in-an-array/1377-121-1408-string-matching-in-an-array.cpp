@@ -1,22 +1,26 @@
 class Solution {
 public:
     vector<string> stringMatching(vector<string>& words) {
-        int len = words.size(), index = 0;
+        int len = words.size();
         vector<string> result;
+        unordered_set<string> resultSet;
+        
         if(len == 1) return result;
-        while(index < len){
-            string sub = words[index];
-            for(int i = 0; i < len; i++){
-                if(index == i) continue;
-                string str = words[i];
-                if(str.find(sub) != string::npos) {
-                    auto exist = find(result.begin(), result.end(), sub);
-                    if(exist == result.end()) 
-                        result.push_back(sub);
+        
+        sort(words.begin(), words.end(), [](const string& a, const string& b) {
+            return a.size() < b.size();
+        });
+        
+        for (int i = 0; i < len; i++) {
+            string sub = words[i];
+            for (int j = i + 1; j < len; j++) {
+                string str = words[j];
+                if (str.find(sub) != string::npos && resultSet.find(sub) == resultSet.end()) {
+                    result.push_back(sub);
+                    resultSet.insert(sub);
+                    break;
                 }
-                else continue;
             }
-            index++;
         }
         return result;
     }
