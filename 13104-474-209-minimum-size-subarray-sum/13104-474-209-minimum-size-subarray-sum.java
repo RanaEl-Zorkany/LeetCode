@@ -1,6 +1,5 @@
 public class Solution {
     public int minSubArrayLen(int target, int[] nums) {
-        // ArrayList<Integer> prefix = new ArrayList<>();
         int len = nums.length;
         int start = 0, sum = 0, minLen = Integer.MAX_VALUE;
         
