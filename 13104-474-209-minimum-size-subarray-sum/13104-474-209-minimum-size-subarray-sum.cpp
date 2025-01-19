@@ -1,8 +1,7 @@
 class Solution {
 public:
     int minSubArrayLen(int target, vector<int>& nums) {
-        int len = nums.size();
-        int minLen = INT_MAX, start = 0, sum = 0;
+        int len = nums.size(), minLen = INT_MAX, start = 0, sum = 0;
         if(nums[0] >= target) return 1;
 
         for(int end = 0; end < len; end++){
