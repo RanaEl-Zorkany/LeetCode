@@ -3,7 +3,7 @@ class Solution {
 public:
     int minSubArrayLen(int target, vector<int>& nums) {
         // PREFIX SUM O(nlog(n))
-        /* int len = nums.size(), minLen = INT_MAX;
+        int len = nums.size(), minLen = INT_MAX;
         if(nums[0] >= target) return 1;
         prefix.resize(len + 1);
         for(int i = 0; i < len; i++){
@@ -18,7 +18,7 @@ public:
                 minLen = min(minLen, pos - i);
             }
         }
-        return minLen == INT_MAX ? 0 : minLen;*/ 
+        return minLen == INT_MAX ? 0 : minLen;
     }
     int upper_bound(int target){
         int start = 0, end = prefix.size(), mid;
