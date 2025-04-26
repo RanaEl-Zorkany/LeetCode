@@ -1,6 +1,5 @@
 class Solution {
 public:
-// ds
     int lengthOfLongestSubstring(string s) {
         int size = s.size();
         if(size < 2) return size;
