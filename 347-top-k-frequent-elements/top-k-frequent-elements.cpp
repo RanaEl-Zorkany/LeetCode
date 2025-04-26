@@ -16,6 +16,7 @@ public:
             res.push_back(minHeap.top().second);
             minHeap.pop();
         }
+        // reversing the result
         reverse(res.begin(), res.end());
         return res;
     }
