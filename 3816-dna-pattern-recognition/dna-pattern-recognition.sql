@@ -1,17 +1,23 @@
 /* Write your T-SQL query statement below */
-SELECT sample_id, dna_sequence, species,
+SELECT 
+    sample_id, 
+    dna_sequence, 
+    species,
+        
     CASE 
-        WHEN dna_sequence LIKE('ATG%') THEN 1 ELSE 0
+        WHEN dna_sequence LIKE 'ATG%' THEN 1 ELSE 0 
     END AS has_start,
+    
     CASE 
-        WHEN dna_sequence LIKE('%TAA') OR
-        dna_sequence LIKE('%TAG') OR 
-        dna_sequence LIKE('%TGA') THEN 1 ELSE 0
+        WHEN RIGHT(dna_sequence, 3) IN ('TAA', 'TAG', 'TGA') THEN 1 ELSE 0 
     END AS has_stop,
+    
     CASE 
-        WHEN dna_sequence LIKE('%ATAT%') THEN 1 ELSE 0
+        WHEN CHARINDEX('ATAT', dna_sequence) > 0 THEN 1 ELSE 0 
     END AS has_atat,
+    
     CASE 
-        WHEN dna_sequence LIKE('%GGG%') THEN 1 ELSE 0
+        WHEN CHARINDEX('GGG', dna_sequence) > 0 THEN 1 ELSE 0 
     END AS has_ggg
+
 FROM Samples;
