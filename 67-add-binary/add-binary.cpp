@@ -3,12 +3,12 @@ public:
     string addBinary(string a, string b) {
         string ans; int remainder = 0;
         if(a.size() < b.size()) swap(a, b);
+
         reverse(a.begin(), a.end());
         reverse(b.begin(), b.end());
+
         for(int i=b.size(); i<a.size(); i++) b += '0';
-        cout << a << "   " << b;
-        int i = 0;
-        for(; i<a.size(); ++i){
+        for(int i=0; i<a.size(); ++i){
             if(a[i] == '1' && b[i] == '1'){
                 if(remainder == 0) ans += '0';
                 else ans += '1';
