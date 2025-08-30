@@ -1,7 +1,7 @@
 class Solution {
     vector<vector<int>> grid;
     vector<vector<bool>> vis;
-    int n, m, cnt, ans;
+    int n, m, ans;
 
     int dx[8] = { +0, +0, -1, +1, +1, +1, -1, -1 };
     int dy[8] = { -1, +1, +0, +0, +1, -1, +1, -1 };
@@ -10,14 +10,15 @@ class Solution {
     return x<n && x>=0 && y<m && y>=0 && !vis[x][y] && grid[x][y] == 1;
     }
 
-    void dfs(int x, int y){
+    int dfs(int x, int y){
         vis[x][y] = true;
-        cnt++;
+        int area = 1;
         for(int i=0; i<4; ++i){
             int nx = x + dx[i];
             int ny = y + dy[i];
-            if(valid(nx, ny)) dfs(nx, ny);
+            if(valid(nx, ny)) area += dfs(nx, ny);
         }
+        return area;
     }
 public:
     int maxAreaOfIsland(vector<vector<int>>& g) {
@@ -32,9 +33,9 @@ public:
             for (int j = 0; j < m; j++)
             {
                 if(valid(i, j)) {
-                    dfs(i, j);
-                    ans = max(ans, cnt);
-                    cnt = 0;
+                    int area = dfs(i, j);
+                    ans = max(ans, area);
+                    
                 }
             }
             
