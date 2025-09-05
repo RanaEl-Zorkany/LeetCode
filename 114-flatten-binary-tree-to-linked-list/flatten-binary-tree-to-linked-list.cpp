@@ -11,25 +11,21 @@
  */
 class Solution {
 public:
-    vector<int> data;
-    void preorder(TreeNode* root){
+    void flatten(TreeNode* root) {
         if(!root) return;
-        data.push_back(root->val);
-        preorder(root->left);
-        preorder(root->right);
-    }
-    void createTree(TreeNode* root){
+
+        flatten(root->left);
+        flatten(root->right);
+        TreeNode* leftSubtree = root->left;
+        TreeNode* rightSubtree = root->right;
+
+        root->left = nullptr;
+        root->right = leftSubtree;
+        
         TreeNode* current = root;
-        for (int i = 1; i < data.size(); ++i) {
-            current->left = nullptr;
-            current->right = new TreeNode(data[i]);
+        while(current->right){
             current = current->right;
         }
-    } 
-    void flatten(TreeNode* root) {
-        if (!root) return;
-        preorder(root);
-        root->val = data[0];
-        createTree(root);
+        current->right = rightSubtree;  
     }
 };
