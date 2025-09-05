@@ -33,7 +33,6 @@ public:
     bool hasPathSum(TreeNode* root, int t) {
         if(!root) return false;
         targetSum = t;
-        cout << root->val << endl;
         dfs(root, root->val);
         return found;
     }
