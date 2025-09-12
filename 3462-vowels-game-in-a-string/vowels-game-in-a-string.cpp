@@ -1,12 +1,10 @@
 class Solution {
 public:
-    bool isVowel(char ch){
-        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
-    }
+    
     bool doesAliceWin(string s) {
-        int vowelsNum = 0;
+        string vowels = "aeiou";
         for(auto ch:s){
-            if(isVowel(ch)) return true;
+            if(vowels.find(ch) != string::npos) return true;
         }
         return false;
     }
