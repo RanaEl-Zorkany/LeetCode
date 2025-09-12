@@ -6,8 +6,8 @@ public:
     bool doesAliceWin(string s) {
         int vowelsNum = 0;
         for(auto ch:s){
-            if(isVowel(ch)) vowelsNum++;
+            if(isVowel(ch)) return true;
         }
-        return (vowelsNum) ? true:false;
+        return false;
     }
 };
